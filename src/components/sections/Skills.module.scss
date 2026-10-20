@@ -10,9 +10,9 @@
 
 .grid {
   display: grid;
-  gap: 3rem;
+  gap: 5rem;
 
-  @include media(md) {
+  @include media(lg) {
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
   }
@@ -21,7 +21,11 @@
 .group {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
+}
+
+.group + .group {
+  padding-top: 3rem;
 }
 
 .groupTitle {
@@ -29,8 +33,18 @@
   font-weight: 500;
 }
 
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+.list {
+  columns: 2;
+  column-gap: 2rem;
+
+  @include media(md) {
+    columns: 3;
+  }
+}
+
+.item {
+  break-inside: avoid;
+  font-size: var(--text-base);
+  color: var(--ink);
+  margin-bottom: 0.35rem;
 }

@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { projectsMeta } from '../../data/projects';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
-import { Tag } from '../ui/Tag';
 import { SectionHeading } from '../ui/SectionHeading';
 import styles from './Projects.module.scss';
 
@@ -37,19 +36,25 @@ export function Projects() {
                   className={styles.card}
                   aria-label={`${item.title} — ${t('projects.liveLabel')}`}
                 >
-                  <div className={styles.header}>
-                    <div>
-                      <h3 className={styles.title}>{item.title}</h3>
-                      <span className={styles.year}>{item.year}</span>
-                    </div>
+                  <div className={styles.media}>
+                    <img
+                      src={meta.screenshot}
+                      alt={`${item.title} screenshot`}
+                      width={720}
+                      height={450}
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                      className={styles.image}
+                    />
                   </div>
-                  <p className={styles.description}>{item.description}</p>
-                  <div className={styles.reveal}>
-                    <div className={styles.tags}>
-                      {meta.tags.map((tag) => (
-                        <Tag key={tag}>{tag}</Tag>
-                      ))}
+                  <div className={styles.body}>
+                    <div className={styles.header}>
+                      <div>
+                        <h3 className={styles.title}>{item.title}</h3>
+                        <span className={styles.year}>{meta.year}</span>
+                      </div>
                     </div>
+                    <p className={styles.description}>{item.description}</p>
+                    <p className={styles.tags}>{meta.tags.join(' · ')}</p>
                     <div className={styles.links}>
                       <span>{t('projects.liveLabel')}</span>
                       <a

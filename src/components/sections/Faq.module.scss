@@ -32,7 +32,7 @@
 }
 
 .question {
-  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-size: var(--text-lg);
   font-weight: 500;
   line-height: var(--leading-snug);
 }
@@ -40,6 +40,6 @@
 .answer {
   font-size: var(--text-base);
   line-height: var(--leading-normal);
-  color: var(--muted);
+  color: var(--ink);
   max-width: 45ch;
 }

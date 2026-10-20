@@ -1,7 +1,7 @@
 @use '../../styles/mixins' as *;
 
 .hero {
-  min-height: 100svh;
+  min-height: 70svh;
   padding-top: var(--header-height);
   display: flex;
   flex-direction: column;
@@ -12,7 +12,9 @@
   @include container;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  align-items: center;
+  gap: 1.75rem;
+  text-align: center;
 }
 
 .terminal {
@@ -39,24 +41,27 @@
   flex-direction: column;
   gap: 0.25rem;
   font-family: var(--font-sans);
-  font-size: clamp(2.75rem, 9.5vw, 8rem);
+  font-size: var(--text-display);
   font-weight: 500;
   line-height: 0.92;
   letter-spacing: -0.04em;
   color: var(--ink);
+  text-align: center;
 }
 
 .line {
   display: block;
+  white-space: nowrap;
 }
 
 .footer {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   margin-top: 1rem;
+  width: 100%;
 
   @include media(md) {
     flex-direction: row;
@@ -73,8 +78,9 @@
 
 .cta {
   padding: 0.75rem 1.25rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--text-sm);
+  font-weight: 500;
   color: var(--accent-contrast);
   background-color: var(--accent);
   border-radius: var(--radius);

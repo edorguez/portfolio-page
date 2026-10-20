@@ -13,8 +13,9 @@
 }
 
 .wordmark {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--text-sm);
+  font-weight: 500;
   color: var(--accent);
 }
 
@@ -25,10 +26,14 @@
 }
 
 .links {
-  display: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   align-items: center;
-  gap: 1.25rem;
-  font-family: var(--font-mono);
+  row-gap: 0.25rem;
+  column-gap: 0.9rem;
+  max-width: 60%;
+  font-family: var(--font-sans);
   font-size: var(--text-xs);
   color: var(--muted);
 
@@ -42,6 +47,7 @@
   }
 
   @include media(md) {
-    display: flex;
+    gap: 1.25rem;
+    max-width: none;
   }
 }

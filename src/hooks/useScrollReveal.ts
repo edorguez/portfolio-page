@@ -13,19 +13,21 @@ export function useScrollReveal<T extends HTMLElement>() {
       const elements = gsap.utils.toArray<HTMLElement>('[data-animate]');
       if (elements.length === 0) return;
 
-      gsap.set(elements, { y: 28, opacity: 0 });
-      gsap.to(elements, {
-        y: 0,
-        opacity: 1,
-        duration: 0.65,
-        stagger: 0.07,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: ref.current,
-          start: 'top 78%',
-          once: true,
-        },
-      });
+      gsap.fromTo(
+        elements,
+        { y: 28 },
+        {
+          y: 0,
+          duration: 0.65,
+          stagger: 0.07,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: ref.current,
+            start: 'top 78%',
+            once: true,
+          },
+        }
+      );
     },
     { scope: ref }
   );

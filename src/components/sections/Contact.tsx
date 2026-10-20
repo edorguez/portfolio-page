@@ -108,25 +108,27 @@ export function Contact({ onThemeCommand }: ContactProps) {
 
         <div data-animate>
           <TerminalWindow className={styles.terminal}>
-            <div className={styles.history} aria-live="polite">
+            <pre className={styles.history} aria-live="polite">
               {lines.map((line, index) => (
                 <div key={index} className={styles.historyLine}>
                   {line}
                 </div>
               ))}
-            </div>
+            </pre>
             <form onSubmit={handleSubmit} className={styles.form}>
-              <span className={styles.prompt}>{t('contact.terminal.prompt')}</span>
-              <input
-                ref={inputRef}
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder={t('contact.terminal.placeholder')}
-                className={styles.input}
-                autoComplete="off"
-                aria-label={t('contact.terminal.placeholder')}
-              />
+              <code className={styles.inputLine}>
+                <span className={styles.prompt}>{t('contact.terminal.prompt')}</span>
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  placeholder={t('contact.terminal.placeholder')}
+                  className={styles.input}
+                  autoComplete="off"
+                  aria-label={t('contact.terminal.placeholder')}
+                />
+              </code>
             </form>
           </TerminalWindow>
         </div>

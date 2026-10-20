@@ -19,6 +19,8 @@ npm install
 npm run dev
 ```
 
+> **Node version:** Vite 8 / Rolldown require Node.js 20.19+ or 22.12+. If you are on an older Node (e.g. 22.9.0), install the matching `@rolldown/binding-*` package and use `npm install --legacy-peer-deps`.
+
 ## Build
 
 ```bash

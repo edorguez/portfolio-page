@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { skillGroups } from '../../data/skills';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
-import { Tag } from '../ui/Tag';
 import { SectionHeading } from '../ui/SectionHeading';
 import styles from './Skills.module.scss';
 
@@ -22,11 +21,9 @@ export function Skills() {
               <h3 className={styles.groupTitle}>
                 {group.id === 'professional' ? t('skills.professional') : t('skills.builder')}
               </h3>
-              <ul className={styles.tags}>
+              <ul className={styles.list}>
                 {group.items.map((skill) => (
-                  <li key={skill}>
-                    <Tag>{skill}</Tag>
-                  </li>
+                  <li key={skill} className={styles.item}>{skill}</li>
                 ))}
               </ul>
             </div>

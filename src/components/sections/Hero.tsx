@@ -40,13 +40,12 @@ export function Hero() {
         if (command) command.textContent = '';
       });
 
-      // Reveal statement lines with spring-like stagger
+      // Reveal statement lines with a spring-like stagger (keep visible)
       tl.fromTo(
         lines,
-        { y: 40, opacity: 0, rotateX: -10 },
+        { y: 40, rotateX: -4 },
         {
           y: 0,
-          opacity: 1,
           rotateX: 0,
           duration: 0.9,
           stagger: 0.12,
@@ -56,8 +55,8 @@ export function Hero() {
       );
 
       // Reveal supporting sentence and CTA
-      if (support) tl.fromTo(support, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, '-=0.4');
-      if (cta) tl.fromTo(cta, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, '-=0.5');
+      if (support) tl.fromTo(support, { y: 20 }, { y: 0, duration: 0.6 }, '-=0.4');
+      if (cta) tl.fromTo(cta, { y: 20 }, { y: 0, duration: 0.6 }, '-=0.5');
     },
     { scope: scopeRef }
   );
@@ -68,32 +67,32 @@ export function Hero() {
     <section ref={scopeRef} className={styles.hero} id="#" aria-label="Introduction">
       <div className={styles.inner}>
         <TerminalWindow className={styles.terminal}>
-          <div className={styles.session}>
+          <pre className={styles.session}>
             <span className={styles.prompt}>{t('hero.prompt')}</span>{' '}
             <span ref={commandRef} className={styles.command} />
             <TerminalCursor />
-          </div>
+          </pre>
         </TerminalWindow>
 
         <h1 className={styles.statement}>
           {statementLines.map((line, index) => (
-            <span key={index} className={styles.line} style={reduced ? {} : { opacity: 0 }}>
+            <span key={index} className={styles.line}>
               {line}
             </span>
           ))}
         </h1>
 
         <div className={styles.footer}>
-          <p className={styles.supporting} style={reduced ? {} : { opacity: 0 }}>
+          <p className={styles.supporting}>
             {t('hero.supporting')}
           </p>
-          <a
-            href={`mailto:${profile.email}`}
+          <button
+            type="button"
             className={styles.cta}
-            style={reduced ? {} : { opacity: 0 }}
+            onClick={() => { window.location.href = `mailto:${profile.email}`; }}
           >
             {t('hero.cta')}
-          </a>
+          </button>
         </div>
       </div>
     </section>

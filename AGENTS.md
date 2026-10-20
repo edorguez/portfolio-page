@@ -23,6 +23,8 @@ Compact source of truth for agents working on Eduardo Rodríguez's personal port
 
 - Tailwind is **forbidden**. Styling is Sass CSS Modules: co-located `Component.tsx` + `Component.module.scss` plus global files in `src/styles/`.
 - TypeScript 7 is a native port. If a tool or editor plugin breaks, suspect TS-API compatibility first.
+- Node.js 22.12+ is required by Vite 8 / Rolldown. On older Node versions (e.g. 22.9.0) you may need to install the matching `@rolldown/binding-*` package manually and use `npm install --legacy-peer-deps`.
+- `typescript-eslint` does not yet support TypeScript 7, so the project pins TypeScript 6.x.
 
 ## Commands
 
@@ -62,6 +64,10 @@ npm run typecheck  # tsc --noEmit
 - **Sans-serif**: Geist — UI and prose.
 - **Forbidden as primary fonts**: Inter, Roboto, Arial, system-ui, and any bare `system-ui` fallback.
 - Self-host both; do not depend on Google Fonts/CDN.
+
+### Direction
+- Adopted taste-skill direction `type-only-statement` for its typographic boldness.
+- The dealt palette (`Bottle green, gold`) and hero blueprint (`Waterline headline`) conflicted with the required terminal/SSH identity, so palette and hero were overridden to a terminal dark/light scheme and an SSH-login hero. The typographic composition remains.
 
 ### Motion
 - GSAP + ScrollTrigger; all animation through `useGSAP()` from `@gsap/react` with scoped refs.

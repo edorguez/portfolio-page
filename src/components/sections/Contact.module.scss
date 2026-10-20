@@ -1,0 +1,96 @@
+@use '../../styles/mixins' as *;
+
+.contact {
+  padding-block: var(--section-gap);
+  background-color: var(--surface);
+}
+
+.inner {
+  @include container;
+}
+
+.heading {
+  font-size: var(--text-xl);
+  font-weight: 500;
+  margin-bottom: 3rem;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.row {
+  display: flex;
+  align-items: flex-end;
+  min-height: 84px;
+  padding: 0.75rem var(--gutter);
+  margin-inline: calc(-1 * var(--gutter));
+  font-size: clamp(1.75rem, 5vw, 3.5rem);
+  line-height: 1;
+  color: var(--ink);
+  background-color: transparent;
+  transition: background-color var(--transition-base);
+
+  &:nth-child(odd) {
+    background-color: var(--surface-2);
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--accent-dim);
+  }
+}
+
+.rowValue {
+  word-break: break-word;
+}
+
+.terminal {
+  max-width: 100%;
+}
+
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  min-height: 3rem;
+  max-height: 12rem;
+  overflow-y: auto;
+}
+
+.historyLine {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.prompt {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  outline: none;
+
+  &::placeholder {
+    color: var(--muted);
+  }
+}

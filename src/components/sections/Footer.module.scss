@@ -1,0 +1,72 @@
+@use '../../styles/mixins' as *;
+
+.footer {
+  padding-block: var(--section-gap) 3rem;
+  background-color: var(--surface);
+}
+
+.inner {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.wordmark {
+  font-size: clamp(3rem, 12vw, 10rem);
+  font-weight: 500;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: var(--muted);
+  opacity: 0.25;
+}
+
+.row {
+  display: grid;
+  gap: 2rem;
+
+  @include media(md) {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.places {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  color: var(--accent);
+}
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  font-size: var(--text-sm);
+  color: var(--muted);
+
+  a:hover,
+  a:focus-visible {
+    color: var(--ink);
+  }
+}
+
+.legal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--muted);
+}
+
+.backToTop {
+  color: var(--muted);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--accent);
+  }
+}

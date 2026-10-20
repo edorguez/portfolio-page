@@ -1,0 +1,87 @@
+@use '../../styles/mixins' as *;
+
+.hero {
+  min-height: 100svh;
+  padding-top: var(--header-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inner {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.terminal {
+  max-width: 42rem;
+}
+
+.session {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.prompt {
+  color: var(--muted);
+}
+
+.command {
+  color: var(--ink);
+}
+
+.statement {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-family: var(--font-sans);
+  font-size: clamp(2.75rem, 9.5vw, 8rem);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+
+.line {
+  display: block;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 1rem;
+
+  @include media(md) {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+.supporting {
+  max-width: 36ch;
+  font-size: var(--text-md);
+  line-height: var(--leading-snug);
+  color: var(--muted);
+}
+
+.cta {
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--accent-contrast);
+  background-color: var(--accent);
+  border-radius: var(--radius);
+  transition: filter var(--transition-fast);
+
+  &:hover,
+  &:focus-visible {
+    filter: brightness(1.1);
+  }
+}

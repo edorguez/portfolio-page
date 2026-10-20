@@ -1,0 +1,36 @@
+@use '../../styles/mixins' as *;
+
+.skills {
+  padding-block: var(--section-gap);
+}
+
+.inner {
+  @include container;
+}
+
+.grid {
+  display: grid;
+  gap: 3rem;
+
+  @include media(md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.groupTitle {
+  font-size: var(--text-lg);
+  font-weight: 500;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

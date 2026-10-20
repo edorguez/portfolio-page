@@ -1,0 +1,43 @@
+@use 'sass:map';
+
+$breakpoints: (
+  sm: 40rem,
+  md: 64rem,
+  lg: 90rem,
+);
+
+@mixin media($name) {
+  $value: map.get($breakpoints, $name);
+  @if $value {
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$name}";
+  }
+}
+
+@mixin container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@mixin mono-data {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.01em;
+}

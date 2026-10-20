@@ -1,0 +1,39 @@
+@use 'tokens';
+@use 'reset';
+@use 'mixins';
+
+// Self-hosted font imports
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+@import '@fontsource/jetbrains-mono/700.css';
+@import '@fontsource/geist-sans/400.css';
+@import '@fontsource/geist-sans/500.css';
+@import '@fontsource/geist-sans/700.css';
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.app {
+  position: relative;
+  min-height: 100svh;
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.1em;
+  background-color: var(--cursor);
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

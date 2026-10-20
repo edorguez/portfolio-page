@@ -1,0 +1,90 @@
+@use '../../styles/mixins' as *;
+
+.about {
+  padding-block: var(--section-gap);
+}
+
+.inner {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.row {
+  display: grid;
+  gap: 2rem;
+
+  @include media(md) {
+    grid-template-columns: minmax(140px, 18%) 1fr;
+    gap: 4rem;
+  }
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+
+  @include media(md) {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--muted);
+  text-transform: lowercase;
+}
+
+.value {
+  font-size: var(--text-base);
+  color: var(--ink);
+}
+
+.paragraph {
+  font-size: clamp(1.15rem, 1.8vw, 1.6rem);
+  line-height: var(--leading-snug);
+  max-width: 52ch;
+}
+
+.record {
+  @include media(md) {
+    padding-left: 22%;
+  }
+}
+
+.recordLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--muted);
+  text-transform: lowercase;
+  margin-bottom: 1rem;
+}
+
+.recordList {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.recordItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: var(--text-sm);
+  max-width: 34rem;
+}
+
+.year {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}

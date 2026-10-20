@@ -1,0 +1,16 @@
+.toggle {
+  padding: 0.25rem 0.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--muted);
+  text-transform: lowercase;
+  border: 1px solid var(--border);
+  background-color: transparent;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+}

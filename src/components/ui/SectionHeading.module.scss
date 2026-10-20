@@ -1,0 +1,17 @@
+.header {
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: var(--text-xl);
+  font-weight: 500;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+}
+
+.note {
+  margin-top: 0.75rem;
+  font-size: var(--text-base);
+  color: var(--muted);
+  max-width: 55ch;
+}

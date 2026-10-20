@@ -1,0 +1,36 @@
+# edoutput.dev — Eduardo Rodríguez portfolio
+
+Eduardo Rodríguez is a Full Stack Developer with 8+ years of experience building production systems across banking, government, and SaaS.
+
+## Contact
+- Email: edro998@gmail.com
+- Phone: +58 04141280555
+- LinkedIn: https://www.linkedin.com/in/edorguez
+- GitHub: https://github.com/edorguez
+- Location: Venezuela (remote US / LATAM)
+
+## Professional experience
+- Springbrook Software — Full Stack .NET & Angular Developer (2025–present)
+- WebCreek — Full Stack .NET & Angular Developer (2023–2025)
+- Alabama Solutions — Full Stack .NET & Angular Developer for Infocorp (2022–2023)
+- Versoft — Full Stack Developer (2021–2022)
+- VE Core Systems — Software Developer (2019–2021)
+- ArmandoInfo — Junior .NET Developer (2018–2019)
+
+## Featured projects
+1. MERKI — https://somosmerki.app — Cross-platform supermarket cart calculator for Venezuela (React Native Expo, React, Go/Gin, PostgreSQL, Redis, AWS, Docker).
+2. Business Manager — https://business-manager.edoutput.dev — Microservices business platform with gRPC and polyglot persistence (Next.js, Go, PostgreSQL, MongoDB, Redis).
+3. GPS Medical Assistance — https://gps-medical-assistance.edoutput.dev — Accident detection with facial recognition and Twilio SMS alerts (Angular, .NET 6, MongoDB, PostgreSQL).
+4. Viaja Venezuela — https://tourism-agency.edoutput.dev — Tourism agency platform with Clean Architecture/DDD backend (Angular, .NET 7, PostgreSQL).
+
+## Tech stack
+- Frontend: TypeScript, React, Next.js, Angular
+- Backend: C# / .NET, Go / Gin, gRPC
+- Data: SQL Server, PostgreSQL, MongoDB, Redis, SQLite
+- Cloud/DevOps: Azure, AWS, Docker, GitHub Actions, Azure DevOps
+- Mobile: React Native / Expo, Xamarin Forms
+
+## About this site
+- Built with Vite 8, React 19, TypeScript 6, GSAP 3.15, Sass CSS Modules, react-i18next.
+- Self-hosted on a local machine behind a Cloudflare Tunnel at https://edoutput.dev.
+- Supports English (US) and Spanish (LATAM), dark and light themes.

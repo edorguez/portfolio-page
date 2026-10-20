@@ -1,0 +1,45 @@
+@use '../../styles/mixins' as *;
+
+.faq {
+  padding-block: var(--section-gap);
+}
+
+.inner {
+  @include container;
+}
+
+.heading {
+  font-size: var(--text-xl);
+  font-weight: 500;
+  margin-bottom: 3rem;
+  color: var(--muted);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.row {
+  display: grid;
+  gap: 1rem;
+
+  @include media(md) {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+.question {
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 500;
+  line-height: var(--leading-snug);
+}
+
+.answer {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--muted);
+  max-width: 45ch;
+}

@@ -1,0 +1,56 @@
+:root {
+  // Accent — change this single value to re-skin the site
+  --accent: #33ff66;
+  --accent-rgb: 51, 255, 102;
+
+  // Type
+  --font-sans: 'Geist', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --text-xs: 0.8125rem;   // 13px
+  --text-sm: 0.9375rem;   // 15px
+  --text-base: 1rem;      // 16px
+  --text-md: 1.25rem;     // 20px
+  --text-lg: 1.625rem;    // 26px
+  --text-xl: 2.125rem;    // 34px
+  --text-display: clamp(3.5rem, 9vw, 8rem);
+  --leading-tight: 0.95;
+  --leading-snug: 1.25;
+  --leading-normal: 1.55;
+
+  // Geometry
+  --radius: 0;
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --max-width: 1400px;
+  --section-gap: clamp(6rem, 12vw, 12rem);
+  --header-height: 4rem;
+
+  // Motion
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+}
+
+[data-theme='dark'] {
+  --bg: #0a0a0a;
+  --bg-rgb: 10, 10, 10;
+  --surface: #141414;
+  --surface-2: #1e1e1e;
+  --ink: #f4f4ef;
+  --muted: #8a8a80;
+  --border: rgba(244, 244, 239, 0.12);
+  --accent-dim: rgba(var(--accent-rgb), 0.15);
+  --accent-contrast: var(--bg);
+  --cursor: var(--accent);
+}
+
+[data-theme='light'] {
+  --bg: #f4f4ef;
+  --bg-rgb: 244, 244, 239;
+  --surface: #e8e8e0;
+  --surface-2: #dadad2;
+  --ink: #1a1a1a;
+  --muted: #5a5a55;
+  --border: rgba(26, 26, 26, 0.12);
+  --accent-dim: rgba(var(--accent-rgb), 0.12);
+  --accent-contrast: var(--bg);
+  --cursor: var(--accent);
+}

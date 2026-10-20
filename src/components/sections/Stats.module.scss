@@ -1,0 +1,104 @@
+@use '../../styles/mixins' as *;
+
+.stats {
+  padding-block: var(--section-gap);
+  background-color: var(--surface);
+}
+
+.inner {
+  @include container;
+  display: grid;
+  gap: 3rem;
+
+  @include media(md) {
+    grid-template-columns: 1fr minmax(300px, 420px);
+    gap: 4rem;
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.heading {
+  font-size: var(--text-xl);
+  font-weight: 500;
+  line-height: var(--leading-tight);
+  max-width: 14ch;
+}
+
+.note {
+  font-size: var(--text-base);
+  color: var(--muted);
+  max-width: 38ch;
+}
+
+.totalBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.total {
+  font-size: clamp(6rem, 16vw, 12rem);
+  font-weight: 500;
+  line-height: 0.82;
+  letter-spacing: -0.04em;
+  color: var(--accent);
+}
+
+.totalLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--muted);
+}
+
+.receipt {
+  background-color: var(--bg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.receiptGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.groupTitle {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: var(--text-sm);
+}
+
+.dots {
+  flex: 1;
+  border-bottom: 2px dotted var(--border);
+  min-width: 1rem;
+}
+
+.value {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.totalRow {
+  margin-top: auto;
+  padding: 0.75rem 1rem;
+  background-color: var(--ink);
+  color: var(--bg);
+  font-weight: 500;
+  text-align: center;
+}

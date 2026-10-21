@@ -26,7 +26,7 @@ export const en = {
     facts: {
       role: { label: 'role', value: 'Full Stack Developer' },
       based: { label: 'based', value: 'Venezuela' },
-      remote: { label: 'remote', value: 'US / LATAM' },
+      remote: { label: 'remote', value: 'LATAM' },
     },
     paragraph:
       'I build software that has to keep working after the handoff: banking platforms, government systems, and my own SaaS products from idea to deployment. My day-to-day stack is .NET and Angular; my side projects run on React, Next.js, Go and PostgreSQL.',

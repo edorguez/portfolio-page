@@ -7,7 +7,7 @@ Eduardo Rodríguez is a Full Stack Developer with 8+ years of experience buildin
 - Phone: +58 04141280555
 - LinkedIn: https://www.linkedin.com/in/edorguez
 - GitHub: https://github.com/edorguez
-- Location: Venezuela (remote US / LATAM)
+- Location: Venezuela (remote LATAM)
 - Resume (English): https://edoutput.dev/resume-en.pdf
 - Resume (Spanish): https://edoutput.dev/resume-es.pdf
 - Source: https://github.com/edorguez/portfolio-page (public)

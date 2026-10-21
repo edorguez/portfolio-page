@@ -26,7 +26,7 @@ export const es = {
     facts: {
       role: { label: 'rol', value: 'Desarrollador Full Stack' },
       based: { label: 'ubicación', value: 'Venezuela' },
-      remote: { label: 'remoto', value: 'US / LATAM' },
+      remote: { label: 'remoto', value: 'LATAM' },
     },
     paragraph:
       'Construyo software que debe seguir funcionando después de la entrega: plataformas bancarias, sistemas gubernamentales y mis propios productos SaaS, desde la idea hasta el despliegue. Mi stack diario es .NET y Angular; mis proyectos paralelos corren sobre React, Next.js, Go y PostgreSQL.',

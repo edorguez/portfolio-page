@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
+import { TerminalWindow } from '../ui/TerminalWindow';
 import styles from './About.module.scss';
 
 interface FactEntry {
@@ -23,15 +24,25 @@ export function About() {
     <section ref={ref} className={styles.about} id="about">
       <div className={styles.inner}>
         <div className={styles.intro}>
-          <figure className={styles.portrait} data-animate>
-            <img
-              src="/images/portrait.jpg"
-              alt={t('about.portraitAlt')}
-              width={1000}
-              height={1250}
-              loading="eager"
-            />
-          </figure>
+          <div className={styles.viewer} data-animate>
+            <TerminalWindow title="~/media/portrait.jpg" flush>
+              <figure className={styles.portrait}>
+                <img
+                  src="/images/portrait.jpg"
+                  alt={t('about.portraitAlt')}
+                  width={1000}
+                  height={1250}
+                  loading="eager"
+                />
+                <figcaption className={styles.status}>
+                  <span>1000×1250</span>
+                  <span>JPG</span>
+                  <span>iPhone 15 Pro Max</span>
+                  <span>Oct 2024</span>
+                </figcaption>
+              </figure>
+            </TerminalWindow>
+          </div>
 
           <div className={styles.introContent}>
             <dl className={styles.facts} data-animate>

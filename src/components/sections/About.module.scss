@@ -22,11 +22,14 @@
   }
 }
 
+.viewer {
+  width: 100%;
+}
+
 .portrait {
   position: relative;
   margin: 0;
   overflow: hidden;
-  background-color: var(--surface-2);
 
   img {
     display: block;
@@ -66,6 +69,19 @@
   &:focus-within::after {
     animation: portrait-scan 900ms ease-out;
   }
+}
+
+.status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  background-color: var(--surface-2);
 }
 
 @keyframes portrait-scan {

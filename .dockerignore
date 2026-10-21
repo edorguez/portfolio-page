@@ -1,0 +1,20 @@
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+.DS_Store
+
+node_modules
+dist
+dist-ssr
+coverage
+*.log
+
+# Local agent tooling / editor files
+.agents
+.taste-skill
+skills-lock.json
+opencode.json
+.vscode
+.idea

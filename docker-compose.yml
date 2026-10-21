@@ -1,0 +1,18 @@
+name: portfolio-page
+
+services:
+  portfolio-page-edge:
+    container_name: portfolio-page-edge
+    build:
+      context: .
+      dockerfile: deploy/portfolio-page.Dockerfile
+    ports:
+      - "${BIND_IP:-127.0.0.1}:${EDGE_PORT:-8084}:80"
+    networks:
+      - shared-edge
+    restart: unless-stopped
+
+networks:
+  shared-edge:
+    external: true
+    name: shared-edge

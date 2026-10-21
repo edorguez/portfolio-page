@@ -21,7 +21,6 @@ export const en = {
     status: 'Available for remote work',
     prompt: 'eduardo@edoutput:~$',
     command: 'whoami',
-    shellLink: 'open the live shell in contact',
   },
   about: {
     facts: {
@@ -49,7 +48,7 @@ export const en = {
         items: [
           { name: 'Digital banking', year: 'LAFISE / Republic Bank' },
           { name: 'Government platforms', year: 'PUBLIQ' },
-          { name: 'Funeral services', year: 'NorthStar Memorial' },
+          { name: 'Funeral services', year: 'NorthStar Memorial Group' },
           { name: 'News & media', year: 'Armando.Info' },
           { name: 'Retail / OCR', year: 'MERKI' },
           { name: 'Tourism', year: 'Viaja Venezuela' },
@@ -226,7 +225,7 @@ export const en = {
     rows: [
       { q: 'Who built this site?', a: 'Eduardo Rodríguez. Design direction from the taste-skill, code by hand.' },
       { q: 'What powers it?', a: 'Vite 8, React 19, TypeScript, GSAP and Sass CSS Modules, self-hosted on a local machine behind a Cloudflare Tunnel.' },
-      { q: 'Can I read the source?', a: 'Yes. The repository is public at github.com/edorguez.' },
+      { q: 'Can I read the source?', a: 'Yes. The repository is public at github.com/edorguez/portfolio-page.' },
       { q: 'Is the resume up to date?', a: 'Yes. Use the English or Spanish download buttons in the contact section.' },
     ],
   },

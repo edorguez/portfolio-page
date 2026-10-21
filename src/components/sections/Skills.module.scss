@@ -50,39 +50,4 @@
   gap: 0.65rem;
   min-width: 0;
   padding: 0.4rem 0;
-
-  &:hover .icon,
-  &:hover .monogram {
-    color: var(--accent-text);
-    opacity: 1;
-  }
-}
-
-.icon {
-  display: inline-flex;
-  color: var(--ink);
-  opacity: 0.65;
-  transition: color var(--transition-fast), opacity var(--transition-fast);
-}
-
-.monogram {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: none;
-  width: 1.5rem;
-  height: 1.5rem;
-  font-family: var(--font-sans);
-  font-size: 0.625rem;
-  font-weight: 600;
-  color: var(--ink);
-  opacity: 0.65;
-  background-color: var(--surface-2);
-  transition: color var(--transition-fast), opacity var(--transition-fast);
-}
-
-.label {
-  min-width: 0;
-  font-size: var(--text-base);
-  color: var(--ink);
 }

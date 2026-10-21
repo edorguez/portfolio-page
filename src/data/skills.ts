@@ -41,6 +41,7 @@ export const skillGroups: SkillGroup[] = [
       { label: 'Docker', icon: 'docker' },
       { label: 'AWS', icon: 'aws' },
       { label: 'GitHub Actions', icon: 'githubactions' },
+      { label: 'Claude / AI tooling', icon: 'claude' },
       { label: 'Zustand', monogram: 'Z' },
     ],
   },

@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { projectsMeta } from '../../data/projects';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { SectionHeading } from '../ui/SectionHeading';
+import { TechBadge } from '../ui/TechBadge';
 import styles from './Projects.module.scss';
 
 interface ProjectItem {
@@ -59,7 +60,13 @@ export function Projects() {
                       </div>
                     </div>
                     <p className={styles.description}>{item.description}</p>
-                    <p className={styles.tags}>{meta.tags.join(' · ')}</p>
+                    <ul className={styles.tags}>
+                      {meta.tags.map((tag) => (
+                        <li key={tag}>
+                          <TechBadge label={tag} size="sm" />
+                        </li>
+                      ))}
+                    </ul>
                     <div className={styles.links}>
                       <a href={meta.liveUrl} target="_blank" rel="noreferrer">
                         {t('projects.liveLabel')}

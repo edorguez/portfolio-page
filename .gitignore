@@ -13,7 +13,12 @@ dist-ssr
 *.local
 
 # Generated inspector output
-.taste-skill/inspect
+.taste-skill/
+
+# Local agent tooling (not part of the site)
+.agents/
+skills-lock.json
+opencode.json
 
 # Editor directories and files
 .vscode/*

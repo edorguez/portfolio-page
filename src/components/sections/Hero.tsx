@@ -84,12 +84,9 @@ export function Hero() {
         </h1>
 
         <div className={styles.footer}>
-          <div className={styles.footerText}>
-            <p className={styles.supporting}>
-              {t('hero.supporting', { years: yearsExperience })}
-            </p>
-            <a href="#contact" className={styles.shellLink}>{t('hero.shellLink')}</a>
-          </div>
+          <p className={styles.supporting}>
+            {t('hero.supporting', { years: yearsExperience })}
+          </p>
           <button
             type="button"
             className={styles.cta}

@@ -9,5 +9,5 @@ export const meta = {
     sass: '1.105.2',
   },
   deploy: 'Self-hosted via Cloudflare Tunnel',
-  repo: 'https://github.com/edorguez',
+  repo: 'https://github.com/edorguez/portfolio-page',
 } as const;

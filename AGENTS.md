@@ -123,7 +123,7 @@ Also:
 
 ## Skill workflow
 
-- Three managed skills live in `.agents/skills/` and are pinned by `skills-lock.json`. Do not hand-edit skill files.
+- Managed skills live in `.agents/skills/` (pinned by `skills-lock.json`); these are installed locally and git-ignored.
 - Before designing any section: activate `frontend-design` and `design-taste-frontend` (taste-skill).
 - After finishing each section: run `design-reviewer` for polish and variance controls.
 - `hyperframes` is available but for video work only; not needed for this site.

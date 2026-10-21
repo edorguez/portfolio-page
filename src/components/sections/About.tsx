@@ -22,19 +22,31 @@ export function About() {
   return (
     <section ref={ref} className={styles.about} id="about">
       <div className={styles.inner}>
-        <div className={styles.row}>
-          <dl className={styles.facts} data-animate>
-            {Object.entries(facts).map(([key, fact]) => (
-              <div key={key} className={styles.fact}>
-                <dt className={styles.label}>{fact.label}</dt>
-                <dd className={styles.value}>{fact.value}</dd>
-              </div>
-            ))}
-          </dl>
-          <p className={styles.paragraph} data-animate>{t('about.paragraph')}</p>
+        <div className={styles.intro}>
+          <figure className={styles.portrait} data-animate>
+            <img
+              src="/images/portrait.jpg"
+              alt={t('about.portraitAlt')}
+              width={1000}
+              height={1250}
+              loading="eager"
+            />
+          </figure>
+
+          <div className={styles.introContent}>
+            <dl className={styles.facts} data-animate>
+              {Object.entries(facts).map(([key, fact]) => (
+                <div key={key} className={styles.fact}>
+                  <dt className={styles.label}>{fact.label}</dt>
+                  <dd className={styles.value}>{fact.value}</dd>
+                </div>
+              ))}
+            </dl>
+            <p className={styles.paragraph} data-animate>{t('about.paragraph')}</p>
+          </div>
         </div>
 
-        <div className={styles.row}>
+        <div className={styles.records}>
           <div className={styles.record} data-animate>
             <h3 className={styles.recordLabel}>{t('about.records.companies.label')}</h3>
             <ul className={styles.recordList}>

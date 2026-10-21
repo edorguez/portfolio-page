@@ -1,13 +1,13 @@
 :root {
-  // Accent — change this single value to re-skin the site
+  // Accent — confirmed brand colour. Change this single value to re-skin the site.
   --accent: #33ff66;
   --accent-rgb: 51, 255, 102;
 
   // Type — five sizes: display / heading / lead / body / small
   --font-sans: 'Geist Sans', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
-  --text-xs: 0.8125rem;          // small
-  --text-sm: 0.8125rem;          // small (alias)
+  --text-xs: 0.875rem;           // small
+  --text-sm: 0.875rem;           // small (alias)
   --text-base: 1rem;             // body
   --text-md: 1.25rem;            // lead
   --text-lg: 2rem;               // heading
@@ -38,8 +38,11 @@
   --ink: #eeeeee;
   --muted: #8a8a8a;
   --border: rgba(238, 238, 238, 0.12);
+  --accent-text: #33ff66;
+  // Falling-code backdrop — derived from the accent, tuned per theme.
+  --code-rain: #33ff66;
   --accent-dim: rgba(var(--accent-rgb), 0.15);
-  --accent-contrast: var(--bg);
+  --accent-contrast: #0a0a0a;
   --cursor: var(--accent);
 }
 
@@ -49,9 +52,12 @@
   --surface: #e4e4e4;
   --surface-2: #d8d8d8;
   --ink: #1a1a1a;
-  --muted: #5a5a5a;
-  --border: rgba(26, 26, 26, 0.12);
-  --accent-dim: rgba(var(--accent-rgb), 0.12);
-  --accent-contrast: var(--bg);
+  --muted: #4f4f4f;
+  --border: rgba(26, 26, 26, 0.14);
+  --accent-text: #0b6a2b;
+  // Deeper green ink so the backdrop holds contrast on the light ground.
+  --code-rain: #1f5b33;
+  --accent-dim: rgba(var(--accent-rgb), 0.2);
+  --accent-contrast: #0a0a0a;
   --cursor: var(--accent);
 }

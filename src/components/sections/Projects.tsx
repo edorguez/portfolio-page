@@ -29,14 +29,14 @@ export function Projects() {
 
             return (
               <li key={meta.id} className={styles.item} data-animate>
-                <a
-                  href={meta.liveUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={styles.card}
-                  aria-label={`${item.title} — ${t('projects.liveLabel')}`}
-                >
-                  <div className={styles.media}>
+                <article className={styles.card}>
+                  <a
+                    href={meta.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={styles.media}
+                    aria-label={`${item.title} — ${t('projects.liveLabel')}`}
+                  >
                     <img
                       src={meta.screenshot}
                       alt={`${item.title} screenshot`}
@@ -45,30 +45,31 @@ export function Projects() {
                       loading={index === 0 ? 'eager' : 'lazy'}
                       className={styles.image}
                     />
-                  </div>
+                  </a>
+
                   <div className={styles.body}>
                     <div className={styles.header}>
                       <div>
-                        <h3 className={styles.title}>{item.title}</h3>
+                        <h3 className={styles.title}>
+                          <a href={meta.liveUrl} target="_blank" rel="noreferrer">
+                            {item.title}
+                          </a>
+                        </h3>
                         <span className={styles.year}>{meta.year}</span>
                       </div>
                     </div>
                     <p className={styles.description}>{item.description}</p>
                     <p className={styles.tags}>{meta.tags.join(' · ')}</p>
                     <div className={styles.links}>
-                      <span>{t('projects.liveLabel')}</span>
-                      <a
-                        href={meta.repoUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className={styles.link}
-                        onClick={(e) => e.stopPropagation()}
-                      >
+                      <a href={meta.liveUrl} target="_blank" rel="noreferrer">
+                        {t('projects.liveLabel')}
+                      </a>
+                      <a href={meta.repoUrl} target="_blank" rel="noreferrer">
                         {t('projects.repoLabel')}
                       </a>
                     </div>
                   </div>
-                </a>
+                </article>
               </li>
             );
           })}

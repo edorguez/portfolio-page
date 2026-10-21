@@ -6,6 +6,7 @@ import { TerminalWindow } from '../ui/TerminalWindow';
 import { TerminalCursor } from '../layout/TerminalCursor';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
 import { profile } from '../../data/profile';
+import { yearsExperience } from '../../lib/career';
 import styles from './Hero.module.scss';
 
 export function Hero() {
@@ -83,9 +84,12 @@ export function Hero() {
         </h1>
 
         <div className={styles.footer}>
-          <p className={styles.supporting}>
-            {t('hero.supporting')}
-          </p>
+          <div className={styles.footerText}>
+            <p className={styles.supporting}>
+              {t('hero.supporting', { years: yearsExperience })}
+            </p>
+            <a href="#contact" className={styles.shellLink}>{t('hero.shellLink')}</a>
+          </div>
           <button
             type="button"
             className={styles.cta}

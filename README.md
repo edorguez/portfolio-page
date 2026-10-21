@@ -10,6 +10,8 @@ Personal portfolio site for Eduardo Rodríguez — Full Stack Developer.
 - GSAP 3.15 + ScrollTrigger
 - Sass CSS Modules
 - react-i18next (English / Spanish)
+- i18next-browser-languagedetector
+- Devicon (monochrome inline SVG skill icons)
 - Self-hosted fonts: JetBrains Mono + Geist Sans
 
 ## Development
@@ -53,7 +55,8 @@ Point the public hostname `edoutput.dev` to `http://localhost:4173` (or whicheve
 
 ## Updating content
 
-- Copy/edit the CV PDF to `public/resume.pdf`.
+- Replace the CVs at `public/resume-en.pdf` and `public/resume-es.pdf`.
+- Replace the portrait at `public/images/portrait.jpg`.
 - Edit personal data in `src/data/profile.ts`.
 - Edit job history and project metadata in `src/data/experience.ts` and `src/data/projects.ts`.
 - Edit copy in `src/i18n/en.ts` and `src/i18n/es.ts`.
@@ -61,5 +64,6 @@ Point the public hostname `edoutput.dev` to `http://localhost:4173` (or whicheve
 ## Notes
 
 - Tailwind is intentionally not used; styling is Sass CSS Modules.
-- The accent color is defined once in `src/styles/_tokens.scss` (`--accent`).
+- The accent is confirmed green and defined once in `src/styles/_tokens.scss` (`--accent`); light-mode text uses `--accent-text` for contrast.
+- The default language follows the browser, then persists the user's choice in `localStorage`.
 - `public/llms.txt` is a hand-maintained summary for agents and visitors.

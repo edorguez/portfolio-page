@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { skillGroups } from '../../data/skills';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { SectionHeading } from '../ui/SectionHeading';
+import { TechIcon } from '../ui/TechIcon';
 import styles from './Skills.module.scss';
 
 export function Skills() {
@@ -23,7 +24,16 @@ export function Skills() {
               </h3>
               <ul className={styles.list}>
                 {group.items.map((skill) => (
-                  <li key={skill} className={styles.item}>{skill}</li>
+                  <li key={skill.label} className={styles.item}>
+                    {skill.icon ? (
+                      <span className={styles.icon}>
+                        <TechIcon name={skill.icon} />
+                      </span>
+                    ) : (
+                      <span className={styles.monogram}>{skill.monogram}</span>
+                    )}
+                    <span className={styles.label}>{skill.label}</span>
+                  </li>
                 ))}
               </ul>
             </div>

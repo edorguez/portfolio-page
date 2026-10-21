@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { profile } from '../../data/profile';
 import { ThemeToggle } from './ThemeToggle';
 import { LangToggle } from './LangToggle';
 import styles from './Nav.module.scss';
@@ -9,7 +10,8 @@ interface NavProps {
 }
 
 export function Nav({ theme, onThemeToggle }: NavProps) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const resumeHref = i18n.language.startsWith('es') ? profile.resume.es : profile.resume.en;
 
   const links = [
     { label: t('nav.about'), href: '#about' },
@@ -24,14 +26,21 @@ export function Nav({ theme, onThemeToggle }: NavProps) {
       <a href="#" className={styles.wordmark}>
         edoutput.dev
       </a>
-      <div className={styles.group}>
-        <ul className={styles.links}>
-          {links.map((link) => (
-            <li key={link.href}>
-              <a href={link.href}>{link.label}</a>
-            </li>
-          ))}
-        </ul>
+
+      <ul className={styles.links}>
+        {links.map((link) => (
+          <li key={link.href}>
+            <a href={link.href}>{link.label}</a>
+          </li>
+        ))}
+        <li>
+          <a href={resumeHref} download>
+            {t('nav.cv')}
+          </a>
+        </li>
+      </ul>
+
+      <div className={styles.controls}>
         <LangToggle />
         <ThemeToggle theme={theme} onToggle={onThemeToggle} />
       </div>

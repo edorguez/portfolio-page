@@ -8,6 +8,9 @@ Eduardo Rodríguez is a Full Stack Developer with 8+ years of experience buildin
 - LinkedIn: https://www.linkedin.com/in/edorguez
 - GitHub: https://github.com/edorguez
 - Location: Venezuela (remote US / LATAM)
+- Resume (English): https://edoutput.dev/resume-en.pdf
+- Resume (Spanish): https://edoutput.dev/resume-es.pdf
+- Source: https://github.com/edorguez (public)
 
 ## Professional experience
 - Springbrook Software — Full Stack .NET & Angular Developer (2025–present)

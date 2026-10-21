@@ -4,3 +4,8 @@
   background-color: var(--bg);
   color: var(--ink);
 }
+
+.main {
+  position: relative;
+  z-index: 1;
+}

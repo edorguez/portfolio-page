@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
+import { currentYear } from '../../lib/career';
 import styles from './Footer.module.scss';
 
 export function Footer() {
@@ -31,7 +32,7 @@ export function Footer() {
           </div>
         </div>
         <div className={styles.legal} data-animate>
-          <span>{t('footer.legal')}</span>
+          <span>{t('footer.legal', { year: currentYear })}</span>
           <button type="button" onClick={scrollToTop} className={styles.backToTop}>
             {t('footer.backToTop')}
           </button>

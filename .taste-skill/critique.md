@@ -1,59 +1,57 @@
 # Critique — edoutput.dev portfolio
 
-Screens inspected: desktop-fold, desktop-page-01/02/03, tablet-fold/page-01/page-02, mobile-fold/page-01/page-02.
+Screens inspected: desktop-fold, desktop-page-01/02/03, tablet-fold/page-01/page-02, mobile-fold/page-01/page-02, plus a light-mode pass (hero, skills, contact).
 
 ## One second, then five
 
-**One second:** a green terminal prompt and a large, centered name.
+**One second:** a green terminal prompt, a falling-code backdrop and a large centered name.
 
-**Five seconds:** this is Eduardo Rodríguez, a full-stack developer with 8 years of experience. The next action is the green "contact --email" button.
+**Five seconds:** this is Eduardo Rodríguez, a full-stack developer with 8 years of experience. The next actions are the green "contact --email" button, the `cv` nav item, or the English/Spanish CV buttons in Contact.
 
 ## Squint
 
-The dominant shapes are the oversized hero statement and the huge footer wordmark. The accent green (#33ff66) is used sparingly and consistently: prompt, CTA, contact links, live-site links. No accidental bright spots.
+The dominant shapes are the oversized hero statement, the portrait in About, the skills icon grid and the huge footer wordmark. The accent green is used sparingly: prompt, CTA, links, contact prompt, focus states. Light mode switches text accents to a deeper green while keeping the bright fill.
 
 ## Composition
 
-The hero is centered and type-only, which fits the adopted `type-only-statement` direction. On desktop there is a lot of dark ground around the statement; it is deliberate, but the first screen could feel sparse. The supporting sentence and CTA sit below the headline as a balanced pair.
-
-Sections vary in layout: About uses a side-facts / wide-paragraph split, Stats is a two-column receipt, Experience is a vertical timeline, Projects are image cards, Skills are two text columns, Contact is display rows plus a live terminal, FAQ is questions beside answers, Footer is a giant wordmark. No identical card grids.
+The hero is centered and type-only, now backed by a quiet falling-code canvas that fills the former empty ground without stealing focus. Sections remain distinct: About pairs a 4:5 portrait with facts and prose; Stats is a receipt; Experience is a timeline; Projects are screenshot cards; Skills is an icon grid in two clusters; Contact is centered display rows, a CV block and a live terminal; FAQ is questions beside answers; the footer is a giant wordmark.
 
 ## Type
 
-Geist Sans carries 99% of the page; JetBrains Mono is reserved for terminal sessions and literal code. Six font sizes are in use (13/16/20/32/96/173px), close to the five-step target. The hero headline stays at two lines across all three measured widths. No all-caps labels.
+Geist Sans carries 99% of the page; JetBrains Mono is reserved for the terminal and literal code. The scale stays at seven measured sizes (10/14/16/20/32/96/173), with 10px only inside monogram icon tiles. The hero headline stays at two lines at 1440, 768 and 390. Small UI text moved from 13px to 14px.
 
 ## Colour
 
-Dark ground (#0a0a0a), light ink (#eeeeee), one accent (#33ff66). Light mode mirrors the same structure. The accent is easily changed in one line of `_tokens.scss`. No gradients except the optional image scrim, which was removed in favour of plain project cards.
+Dark: #0a0a0a ground, #eeeeee ink, confirmed #33ff66 accent. Light: #eeeeee ground, #1a1a1a ink, #0b6a2b accent text (≈5.3:1 on the surface) and the bright green kept for fills. No gradients. The falling-code canvas uses the same accent token with low alpha.
 
 ## Pictures / footage
 
-Four real project screenshots are loaded as interface fragments. No video is used — a search with `assets.mjs --video` returned no honest clips matching the subject, so the absence is defended.
+Five real images: four live project screenshots plus the portrait (EXIF orientation stripped, cropped 4:5). No video is used — a search with `assets.mjs --video` returned no honest clip matching the subject, so the absence is defended.
 
 ## Motion
 
-Hero: terminal command types, then the statement and CTA reveal with a spring stagger. Terminal cursor blinks. Project cards scale their images on hover/focus. Contact terminal responds to typed commands. Sections also have a subtle staggered y-reveal on scroll. This last effect is useful but close to a generic fade-up; a future pass could replace it with section-specific reveals (counting up the stats total, drawing the timeline, etc.).
+Hero: terminal command types, then the statement and CTA reveal. Cursor blinks. The falling-code canvas drifts and pauses when the tab is hidden or reduced motion is requested. Project images scale on hover/focus. The contact terminal responds to typed commands, aliases and clickable chips. Sections keep a subtle staggered y-reveal — still the least distinctive part of the motion layer.
 
 ## Responsive
 
-Mobile nav links wrap into two lines instead of hiding behind a menu. The hero statement scales down and stays readable. Project cards collapse to a single column. Contact display rows scale and remain tappable. FAQ stacks question above answer on narrow screens.
+The nav is a two-row sticky bar on small screens (wordmark + controls, then links) rather than a hamburger. The hero stays at two lines. About stacks the portrait above the facts. Contact row type drops from 32px to 20px and the CV buttons wrap. Skills move to one or two columns. Terminal chips wrap.
 
 ## Read
 
-Copy is real CV content. Headings are short. Bullets are concise. The terminal is a genuine interaction, not decoration.
+Copy is real CV content. The public repository and both resume files are now linked correctly. The CV block is explicit about the language choice.
 
 ## Argument
 
-The argument is clear: Eduardo has shipped production systems for years across two stacks (.NET/Angular and React/Go), and the evidence is a verifiable log of companies, projects, and a working contact terminal.
+The argument is clear: Eduardo has shipped production systems for years across two stacks (.NET/Angular and React/Go), and the evidence is a verifiable log of companies, projects, a portrait, downloadable CVs and a working contact terminal.
 
 ## Remaining issues
 
 1. **No video** — defended; no fitting clip was found.
-2. **Motion could be more varied** — the scroll reveal is a uniform y-stagger. Replacing it with per-section moves would lift the page.
-3. **Hero density** — the centered first screen is intentionally airy, but it could carry a little more information without breaking the type-only discipline.
+2. **Motion variety** — the scroll reveal is still a uniform y-stagger; per-section moves (a counting stats total, a drawing timeline) would lift it further.
+3. **Hero density** — the centered first screen is intentionally airy; the canvas helps, but it remains a deliberate rest.
 
 ## Score
 
-**7.5 / 10**
+**8.0 / 10**
 
-The page passes the meter with 0 FAIL / 1 WARN, uses a single-token accent, real content, real pictures, and a memorable signature interaction. It sits just below the top tier because the scroll motion is generic and the hero first screen is slightly empty.
+The page passes the meter with 0 FAIL / 1 WARN, has a confirmed single-token accent, real content, five real pictures, a portrait, a clear CV flow, and a terminal that actually works. It sits short of the top tier because the scroll motion is generic and the hero is still sparse.

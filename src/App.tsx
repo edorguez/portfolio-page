@@ -1,4 +1,5 @@
 import { useTheme } from './hooks/useTheme';
+import { BackgroundCanvas } from './components/layout/BackgroundCanvas';
 import { Nav } from './components/layout/Nav';
 import { Hero } from './components/sections/Hero';
 import { About } from './components/sections/About';
@@ -16,8 +17,9 @@ export function App() {
 
   return (
     <div className={styles.app}>
+      <BackgroundCanvas />
       <Nav theme={theme} onThemeToggle={toggle} />
-      <main>
+      <main className={styles.main}>
         <Hero />
         <About />
         <Stats />

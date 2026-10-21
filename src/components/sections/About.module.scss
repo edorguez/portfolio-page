@@ -8,29 +8,90 @@
   @include container;
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  gap: 5rem;
 }
 
-.row {
+.intro {
   display: grid;
   gap: 2rem;
+  align-items: start;
 
   @include media(md) {
-    grid-template-columns: minmax(140px, 18%) 1fr;
+    grid-template-columns: minmax(220px, 320px) 1fr;
     gap: 4rem;
   }
 }
 
+.portrait {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--surface-2);
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: saturate(0.85);
+    transition:
+      transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter var(--transition-base);
+  }
+
+  // Terminal scanline that sweeps the photo once per hover.
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 25%;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(var(--accent-rgb), 0.4),
+      transparent
+    );
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:hover img,
+  &:focus-within img {
+    transform: scale(1.04);
+    filter: saturate(1);
+  }
+
+  &:hover::after,
+  &:focus-within::after {
+    animation: portrait-scan 900ms ease-out;
+  }
+}
+
+@keyframes portrait-scan {
+  from {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(450%);
+    opacity: 0;
+  }
+}
+
+.introContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .facts {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-
-  @include media(md) {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
 }
 
 .fact {
@@ -57,10 +118,18 @@
   max-width: 52ch;
 }
 
-.record {
+.records {
+  display: grid;
+  gap: 2rem;
+
   @include media(md) {
-    padding-left: 22%;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
   }
+}
+
+.record {
+  min-width: 0;
 }
 
 .recordLabel {

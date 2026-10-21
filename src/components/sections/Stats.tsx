@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
+import { yearsExperience } from '../../lib/career';
 import styles from './Stats.module.scss';
 
 interface ReceiptRow {
@@ -19,7 +20,7 @@ export function Stats() {
           <h2 className={styles.heading} data-animate>{t('stats.heading')}</h2>
           <p className={styles.note} data-animate>{t('stats.note')}</p>
           <div className={styles.totalBlock} data-animate>
-            <span className={styles.total}>{t('stats.total')}</span>
+            <span className={styles.total}>{t('stats.total', { years: yearsExperience })}</span>
             <span className={styles.totalLabel}>{t('stats.totalLabel')}</span>
           </div>
         </div>
@@ -56,7 +57,7 @@ export function Stats() {
             ))}
           </div>
           <div className={styles.totalRow}>
-            <span>{t('stats.receipt.totalRow')}</span>
+            <span>{t('stats.receipt.totalRow', { years: yearsExperience })}</span>
           </div>
         </div>
       </div>

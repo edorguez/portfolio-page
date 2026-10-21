@@ -7,7 +7,7 @@ Compact source of truth for agents working on Eduardo Rodríguez's personal port
 - Portfolio for a Software Developer (Full Stack).
 - Domain: `edoutput.dev`.
 - Languages: English (US) + Spanish (LATAM) via `react-i18next`.
-- Content lives in typed TS files under `src/data/`. Real content was extracted from the CV; fill any placeholder fields (`location`, `photo`, `education`) before shipping.
+- Content lives in typed TS files under `src/data/`. Real content was extracted from the CV; the portrait and both resume PDFs are in `public/`.
 
 ## Stack (verified latest, as of Oct 2026)
 
@@ -20,6 +20,8 @@ Compact source of truth for agents working on Eduardo Rodríguez's personal port
 | @gsap/react | `^2.1.2` |
 | sass-embedded | `^1.105.2` |
 | react-i18next | latest stable |
+| i18next-browser-languagedetector | latest stable |
+| devicon | latest stable (monochrome inline SVGs) |
 
 - Tailwind is **forbidden**. Styling is Sass CSS Modules: co-located `Component.tsx` + `Component.module.scss` plus global files in `src/styles/`.
 - TypeScript 7 is a native port. If a tool or editor plugin breaks, suspect TS-API compatibility first.
@@ -53,17 +55,20 @@ npm run typecheck  # tsc --noEmit
 - Default follows `prefers-color-scheme`; manual toggle persists to `localStorage`.
 - No flash on load: set `data-theme` as early as possible (inline script in `index.html` or root script).
 - All theme colors are CSS custom properties generated from `src/styles/_tokens.scss`. Every component consumes `var(--...)`; never hardcode hexes.
+- Default language follows the browser (`localStorage` override → `navigator.language` → English fallback) via `i18next-browser-languagedetector`.
 
 ### Accent
-- Accent is defined **exactly once**: `$accent: #33FF66;` → `--accent` plus derived `--accent-dim` and `--accent-contrast`.
-- Eduardo is unsure about green; the design pass must be able to swap the accent by changing this single token.
-- The `frontend-design` skill notes that "near-black + single acid-green accent" is a common AI-generated default; the design pass should earn distinctiveness through typography and layout, not rely on the accent alone.
+- Accent is confirmed green: `--accent: #33FF66` in `src/styles/_tokens.scss`, with derived `--accent-text`, `--accent-dim` and `--accent-contrast`.
+- The green is the decided brand colour, not a placeholder. The one-token swap remains so the palette can still be adjusted in a single line.
+- Text that sits directly on the ground uses `--accent-text` (dark green in light mode) so contrast holds in both themes. Fills, cursor and selection use `--accent`.
+- The `frontend-design` skill notes that "near-black + single acid-green accent" is a common AI-generated default; distinctiveness is carried by typography and layout, not the accent alone.
 
 ### Typography
-- **Monospace**: JetBrains Mono — terminal data, logs, stack lists, typed hero text.
-- **Sans-serif**: Geist — UI and prose.
+- **Monospace**: JetBrains Mono — terminal sessions, literal code and data fragments.
+- **Sans-serif**: Geist — UI, prose, nav, labels and skill lists.
 - **Forbidden as primary fonts**: Inter, Roboto, Arial, system-ui, and any bare `system-ui` fallback.
 - Self-host both; do not depend on Google Fonts/CDN.
+- Five-step scale: display, heading, lead, body, small. Keep it to roughly five sizes.
 
 ### Direction
 - Adopted taste-skill direction `type-only-statement` for its typographic boldness.
@@ -73,28 +78,32 @@ npm run typecheck  # tsc --noEmit
 - GSAP + ScrollTrigger; all animation through `useGSAP()` from `@gsap/react` with scoped refs.
 - Hero: terminal typing effect, then name springs in (stiffness 100, damping 10).
 - Custom blinking terminal cursor.
+- Ambient falling-code canvas (`BackgroundCanvas`) behind the page; it pauses on hidden tabs and paints a static frame for reduced motion.
 - Avoid generic fade-and-slide-up on every section; each animation must answer a user action or be a single orchestrated reveal.
 
 ## Site structure
 
 1. **Hero** — SSH-login-style terminal typing; Eduardo's name reveals with spring; availability/status line; language toggle.
-2. **About** — asymmetric layout, real bio, stats counters (years, companies, projects), no generic cards.
-3. **Experience** — vertical timeline-as-logs; each role shows company, title, dates, bullets, tech tags.
-4. **Projects** — featured work in order: MERKI → Business Manager → GPS Medical Assistance → Tourism Agency. Hover reveals stack and links (GitHub + live site).
-5. **Skills** — two clusters: professional (.NET/Angular/SQL/Azure) and builder/SaaS (React/Go/PostgreSQL/Docker/AWS).
-6. **Contact** — command-style interaction; `download --resume` returns the PDF from `/public/resume.pdf`.
-7. **FAQ / meta block** — terminal-style site metadata (stack versions, changelog, crafted by).
+2. **About** — portrait plus asymmetric facts/bio, real profile, stats counters (years, companies, projects), no generic cards.
+3. **Experience** — vertical timeline-as-logs; each role shows company, title, dates, location and bullets.
+4. **Projects** — featured work in order: MERKI → Business Manager → GPS Medical Assistance → Tourism Agency. Real screenshots; links to live site and public repo.
+5. **Skills** — two clusters with monochrome tech icons: professional (.NET/Angular/SQL/Azure) and builder/SaaS (React/Go/PostgreSQL/Docker/AWS).
+6. **Contact** — centered display rows, explicit English/Spanish CV download buttons, and a command-style terminal (`help`, `cv`, `email`, `linkedin`, `github`, `theme`, `lang`, `clear`). Resume PDFs live in `public/resume-en.pdf` and `public/resume-es.pdf`.
+7. **FAQ / meta block** — terminal-style site metadata (stack versions, public repo, crafted by).
 
 Also:
 - `public/llms.txt` — hand-maintained, agent-readable site summary.
-- Resume PDF in `public/resume.pdf`.
+- Resume PDFs in `public/resume-en.pdf` (English) and `public/resume-es.pdf` (Spanish).
+- Portrait in `public/images/portrait.jpg`.
 
 ## Content data
 
-- `src/data/profile.ts` — name, title, contact, bio, photo path, location placeholders.
+- `src/data/profile.ts` — name, title, contact, bio, photo path, resume paths, location.
 - `src/data/experience.ts` — job history from CV.
-- `src/data/projects.ts` — 4 projects with titles, descriptions, URLs, tech tags.
-- `src/data/skills.ts` — grouped skills.
+- `src/data/projects.ts` — 4 projects with titles, descriptions, URLs, screenshots, tech tags.
+- `src/data/skills.ts` — grouped skills with icon keys or monogram fallbacks.
+- `src/data/techIcons.ts` — inlined, monochrome Devicon SVGs.
+- `src/lib/career.ts` — current year and years of experience derived from `profile.careerStartYear`.
 - `src/i18n/en.ts` and `src/i18n/es.ts` — typed dictionaries.
 
 ## Architecture conventions

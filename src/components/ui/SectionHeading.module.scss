@@ -1,5 +1,6 @@
 .header {
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 .title {
@@ -11,6 +12,7 @@
 
 .note {
   margin-top: 0.75rem;
+  margin-inline: auto;
   font-size: var(--text-base);
   color: var(--muted);
   max-width: 55ch;

@@ -2,7 +2,7 @@
 
 .hero {
   min-height: 70svh;
-  padding-top: var(--header-height);
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,6 +19,18 @@
 
 .terminal {
   max-width: 42rem;
+}
+
+.shellLink {
+  font-size: var(--text-xs);
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--accent-text);
+  }
 }
 
 .session {
@@ -66,6 +78,17 @@
   @include media(md) {
     flex-direction: row;
     align-items: flex-end;
+  }
+}
+
+.footerText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+
+  @include media(md) {
+    align-items: flex-start;
   }
 }
 

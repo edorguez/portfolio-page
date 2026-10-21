@@ -5,18 +5,23 @@ export const es = {
     projects: 'proyectos',
     skills: 'habilidades',
     contact: 'contacto',
+    cv: 'cv',
   },
   theme: {
-    dark: 'dark',
-    light: 'light',
+    dark: 'oscuro',
+    light: 'claro',
+  },
+  language: {
+    change: 'Cambiar idioma',
   },
   hero: {
     statement: 'EDUARDO RODRÍGUEZ\nDESARROLLADOR FULL STACK',
-    supporting: '8 años construyendo plataformas .NET/Angular y SaaS con React/Go.',
+    supporting: '{{years}}+ años construyendo plataformas .NET/Angular y SaaS con React/Go.',
     cta: 'contacto --email',
     status: 'Disponible para trabajo remoto',
     prompt: 'eduardo@edoutput:~$',
     command: 'whoami',
+    shellLink: 'abrir la terminal en contacto',
   },
   about: {
     facts: {
@@ -25,7 +30,8 @@ export const es = {
       remote: { label: 'remoto', value: 'US / LATAM' },
     },
     paragraph:
-      'Construyo software que debe seguir funcionando después de la entrega: plataformas bancarias usadas por millones, sistemas gubernamentales que gestionan servicios públicos y mis propios productos SaaS, desde la idea hasta el despliegue. Mi stack diario es .NET y Angular; mis proyectos paralelos corren sobre React, Next.js, Go y PostgreSQL. Ambos lados se alimentan entre sí.',
+      'Construyo software que debe seguir funcionando después de la entrega: plataformas bancarias, sistemas gubernamentales y mis propios productos SaaS, desde la idea hasta el despliegue. Mi stack diario es .NET y Angular; mis proyectos paralelos corren sobre React, Next.js, Go y PostgreSQL.',
+    portraitAlt: 'Eduardo Rodríguez de pie en un puente de Buenos Aires.',
     records: {
       companies: {
         label: 'empresas',
@@ -41,8 +47,8 @@ export const es = {
       domains: {
         label: 'dominios',
         items: [
-          { name: 'Banca digital', year: 'LAFISE / Republic' },
-          { name: 'Plataformas gubernamentales', year: 'Mozambique / EE.UU.' },
+          { name: 'Banca digital', year: 'LAFISE / Republic Bank' },
+          { name: 'Plataformas gubernamentales', year: 'PUBLIQ' },
           { name: 'Servicios funerarios', year: 'NorthStar Memorial' },
           { name: 'Noticias y medios', year: 'Armando.Info' },
           { name: 'Retail / OCR', year: 'MERKI' },
@@ -54,7 +60,7 @@ export const es = {
   stats: {
     heading: 'Un proceso de largo plazo',
     note: 'Años enviando sistemas de producción en tres continentes.',
-    total: '8+',
+    total: '{{years}}+',
     totalLabel: 'años online',
     receipt: {
       group1: 'Empresas',
@@ -70,7 +76,7 @@ export const es = {
         { desc: 'Bases de datos', value: 'SQL Server / Postgres' },
         { desc: 'Nube', value: 'Azure / AWS' },
       ],
-      totalRow: '8+ años',
+      totalRow: '{{years}}+ años',
     },
   },
   experience: {
@@ -186,6 +192,10 @@ export const es = {
   contact: {
     heading: 'Contacto',
     greeting: 'Di hola',
+    cvTitle: 'Currículum',
+    cvNote: 'Elige un idioma:',
+    downloadEn: 'CV — Inglés (PDF)',
+    downloadEs: 'CV — Español (PDF)',
     rows: {
       email: 'edro998@gmail.com',
       phone: '+58 04141280555',
@@ -196,8 +206,19 @@ export const es = {
     terminal: {
       prompt: 'eduardo@edoutput:~$',
       placeholder: 'escribe un comando...',
-      help: 'Comandos disponibles: help, contact --email, contact --linkedin, contact --github, download --resume, lang en, theme dark/light',
+      hint: 'Prueba uno de estos:',
+      help: 'Comandos: help, cv, email, linkedin, github, whoami, lang en/es, theme dark/light, clear',
       unknown: '{{cmd}}: comando no encontrado',
+      suggestion: '¿Quisiste decir "{{cmd}}"? Escribe "help" para ver todos los comandos.',
+      whoami: 'Eduardo Rodríguez — Desarrollador Full Stack',
+      email: 'abriendo mailto:{{email}}',
+      linkedin: 'abriendo {{url}}',
+      github: 'abriendo {{url}}',
+      download: 'descargando {{file}}',
+      langEn: 'idioma cambiado a inglés',
+      langEs: 'idioma cambiado a español',
+      themeDark: 'tema cambiado a oscuro',
+      themeLight: 'tema cambiado a claro',
     },
   },
   faq: {
@@ -205,12 +226,12 @@ export const es = {
     rows: [
       { q: '¿Quién construyó este sitio?', a: 'Eduardo Rodríguez. Dirección de diseño desde taste-skill, código escrito a mano.' },
       { q: '¿Qué lo impulsa?', a: 'Vite 8, React 19, TypeScript, GSAP y Sass CSS Modules, autoalojado en una máquina local detrás de un túnel de Cloudflare.' },
-      { q: '¿Puedo leer el código fuente?', a: 'El repositorio es privado, pero el stack y el enfoque están documentados en el archivo público llms.txt.' },
-      { q: '¿El CV está actualizado?', a: 'Sí. El PDF en la sección de contacto es el CV más reciente.' },
+      { q: '¿Puedo leer el código fuente?', a: 'Sí. El repositorio es público en github.com/edorguez.' },
+      { q: '¿El CV está actualizado?', a: 'Sí. Usa los botones de descarga en inglés o español en la sección de contacto.' },
     ],
   },
   footer: {
     backToTop: 'volver arriba',
-    legal: '© 2026 Eduardo Rodríguez. Todos los derechos reservados.',
+    legal: '© {{year}} Eduardo Rodríguez. Todos los derechos reservados.',
   },
 } as const;

@@ -5,18 +5,23 @@ export const en = {
     projects: 'projects',
     skills: 'skills',
     contact: 'contact',
+    cv: 'cv',
   },
   theme: {
     dark: 'dark',
     light: 'light',
   },
+  language: {
+    change: 'Change language',
+  },
   hero: {
     statement: 'EDUARDO RODRÍGUEZ\nFULL STACK DEVELOPER',
-    supporting: '8 years shipping .NET/Angular platforms and React/Go SaaS.',
+    supporting: '{{years}}+ years shipping .NET/Angular platforms and React/Go SaaS.',
     cta: 'contact --email',
     status: 'Available for remote work',
     prompt: 'eduardo@edoutput:~$',
     command: 'whoami',
+    shellLink: 'open the live shell in contact',
   },
   about: {
     facts: {
@@ -25,7 +30,8 @@ export const en = {
       remote: { label: 'remote', value: 'US / LATAM' },
     },
     paragraph:
-      'I build software that has to keep working after the handoff: banking platforms used by millions, government systems that handle public services, and my own SaaS products shipped from idea to deployment. My day-to-day stack is .NET and Angular; my side projects run on React, Next.js, Go and PostgreSQL. Both sides inform each other.',
+      'I build software that has to keep working after the handoff: banking platforms, government systems, and my own SaaS products from idea to deployment. My day-to-day stack is .NET and Angular; my side projects run on React, Next.js, Go and PostgreSQL.',
+    portraitAlt: 'Eduardo Rodríguez standing on a bridge in Buenos Aires.',
     records: {
       companies: {
         label: 'companies',
@@ -41,8 +47,8 @@ export const en = {
       domains: {
         label: 'domains',
         items: [
-          { name: 'Digital banking', year: 'LAFISE / Republic' },
-          { name: 'Government platforms', year: 'Mozambique / US' },
+          { name: 'Digital banking', year: 'LAFISE / Republic Bank' },
+          { name: 'Government platforms', year: 'PUBLIQ' },
           { name: 'Funeral services', year: 'NorthStar Memorial' },
           { name: 'News & media', year: 'Armando.Info' },
           { name: 'Retail / OCR', year: 'MERKI' },
@@ -54,7 +60,7 @@ export const en = {
   stats: {
     heading: 'A long-running process',
     note: 'Years of shipping production systems across three continents.',
-    total: '8+',
+    total: '{{years}}+',
     totalLabel: 'years online',
     receipt: {
       group1: 'Companies',
@@ -70,7 +76,7 @@ export const en = {
         { desc: 'Databases', value: 'SQL Server / Postgres' },
         { desc: 'Cloud', value: 'Azure / AWS' },
       ],
-      totalRow: '8+ years',
+      totalRow: '{{years}}+ years',
     },
   },
   experience: {
@@ -186,6 +192,10 @@ export const en = {
   contact: {
     heading: 'Contact',
     greeting: 'Say hello',
+    cvTitle: 'Resume',
+    cvNote: 'Choose a language:',
+    downloadEn: 'CV — English (PDF)',
+    downloadEs: 'CV — Spanish (PDF)',
     rows: {
       email: 'edro998@gmail.com',
       phone: '+58 04141280555',
@@ -196,8 +206,19 @@ export const en = {
     terminal: {
       prompt: 'eduardo@edoutput:~$',
       placeholder: 'type a command...',
-      help: 'Available commands: help, contact --email, contact --linkedin, contact --github, download --resume, lang es, theme dark/light',
+      hint: 'Try one of these:',
+      help: 'Commands: help, cv, email, linkedin, github, whoami, lang en/es, theme dark/light, clear',
       unknown: '{{cmd}}: command not found',
+      suggestion: 'Did you mean "{{cmd}}"? Type "help" to see every command.',
+      whoami: 'Eduardo Rodríguez — Full Stack Developer',
+      email: 'opening mailto:{{email}}',
+      linkedin: 'opening {{url}}',
+      github: 'opening {{url}}',
+      download: 'downloading {{file}}',
+      langEn: 'language set to English',
+      langEs: 'language set to Spanish',
+      themeDark: 'theme set to dark',
+      themeLight: 'theme set to light',
     },
   },
   faq: {
@@ -205,12 +226,12 @@ export const en = {
     rows: [
       { q: 'Who built this site?', a: 'Eduardo Rodríguez. Design direction from the taste-skill, code by hand.' },
       { q: 'What powers it?', a: 'Vite 8, React 19, TypeScript, GSAP and Sass CSS Modules, self-hosted on a local machine behind a Cloudflare Tunnel.' },
-      { q: 'Can I read the source?', a: 'The repository is private, but the stack and approach are documented in the public llms.txt file.' },
-      { q: 'Is the resume up to date?', a: 'Yes. The PDF in the contact section is the latest CV.' },
+      { q: 'Can I read the source?', a: 'Yes. The repository is public at github.com/edorguez.' },
+      { q: 'Is the resume up to date?', a: 'Yes. Use the English or Spanish download buttons in the contact section.' },
     ],
   },
   footer: {
     backToTop: 'back to top',
-    legal: '© 2026 Eduardo Rodríguez. All rights reserved.',
+    legal: '© {{year}} Eduardo Rodríguez. All rights reserved.',
   },
 } as const;

@@ -37,8 +37,6 @@ export function About() {
                 <figcaption className={styles.status}>
                   <span>1000×1250</span>
                   <span>JPG</span>
-                  <span>iPhone 15 Pro Max</span>
-                  <span>Oct 2024</span>
                 </figcaption>
               </figure>
             </TerminalWindow>
